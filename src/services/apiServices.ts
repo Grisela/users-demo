@@ -7,7 +7,7 @@ export const api = createApi({
   }),
   endpoints: (builder) => ({
     getData: builder.query({
-      query: (odata: string) => `/${odata}`,
+      query: (odata: string) => odata,
     }),
   }),
 });

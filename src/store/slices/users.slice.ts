@@ -1,15 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
-  //TODO initial state
-};
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { IUserState } from "../types/user.type";
+import { initialState } from "../state/users.state";
 
 export const userSlice = createSlice({
   name: "userState",
   initialState,
   reducers: {
-    setUsers: () => {
-      //TODO user state
+    setUsers: (state, actions: PayloadAction<IUserState>) => {
+      state.userList = actions.payload.userList;
     },
   },
 });
